@@ -58,7 +58,7 @@ def refresh():
 cities = parse_city_json()[:1000]
 cities_already_named = set()
 
-TOKEN = settings['token']
+
 
 bot = discord.Client()
 
@@ -75,4 +75,4 @@ async def on_message(message):
             await message.channel.send(response)
 
 
-bot.run(TOKEN)
+token = os.environ.get('BOT_TOKEN')
